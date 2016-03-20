@@ -12,9 +12,13 @@
 		AAF1055F1C9E9A13005DB098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF1055D1C9E9A13005DB098 /* Main.storyboard */; };
 		AAF105611C9E9A13005DB098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF105601C9E9A13005DB098 /* Assets.xcassets */; };
 		AAF105641C9E9A13005DB098 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF105621C9E9A13005DB098 /* LaunchScreen.storyboard */; };
+		FE02F370818D7F246EEBB2D3 /* Pods_WhirlyGlobeSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D10A24CAAF9EA56253EFFA3 /* Pods_WhirlyGlobeSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D10A24CAAF9EA56253EFFA3 /* Pods_WhirlyGlobeSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhirlyGlobeSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E89952D2A708136F161D246 /* Pods-WhirlyGlobeSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhirlyGlobeSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhirlyGlobeSwift/Pods-WhirlyGlobeSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		A3118735F97C7C4ABA6F297C /* Pods-WhirlyGlobeSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhirlyGlobeSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhirlyGlobeSwift/Pods-WhirlyGlobeSwift.release.xcconfig"; sourceTree = "<group>"; };
 		AAF105561C9E9A13005DB098 /* WhirlyGlobeSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhirlyGlobeSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF105591C9E9A13005DB098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF1055B1C9E9A13005DB098 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE02F370818D7F246EEBB2D3 /* Pods_WhirlyGlobeSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D9557C78955C5A4DE55CE05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D10A24CAAF9EA56253EFFA3 /* Pods_WhirlyGlobeSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8118E89F65D9B44997A631E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E89952D2A708136F161D246 /* Pods-WhirlyGlobeSwift.debug.xcconfig */,
+				A3118735F97C7C4ABA6F297C /* Pods-WhirlyGlobeSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AAF1054D1C9E9A13005DB098 = {
 			isa = PBXGroup;
 			children = (
 				AAF105581C9E9A13005DB098 /* WhirlyGlobeSwift */,
 				AAF105571C9E9A13005DB098 /* Products */,
+				8118E89F65D9B44997A631E7 /* Pods */,
+				4D9557C78955C5A4DE55CE05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAF105681C9E9A13005DB098 /* Build configuration list for PBXNativeTarget "WhirlyGlobeSwift" */;
 			buildPhases = (
+				703257B590BE05BB032DBA83 /* 📦 Check Pods Manifest.lock */,
 				AAF105521C9E9A13005DB098 /* Sources */,
 				AAF105531C9E9A13005DB098 /* Frameworks */,
 				AAF105541C9E9A13005DB098 /* Resources */,
+				E649A63611815517B200F9D2 /* 📦 Embed Pods Frameworks */,
+				A80DB83CEBCE1428E20CD8EE /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		703257B590BE05BB032DBA83 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A80DB83CEBCE1428E20CD8EE /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhirlyGlobeSwift/Pods-WhirlyGlobeSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E649A63611815517B200F9D2 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhirlyGlobeSwift/Pods-WhirlyGlobeSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AAF105521C9E9A13005DB098 /* Sources */ = {
@@ -246,6 +321,7 @@
 		};
 		AAF105691C9E9A13005DB098 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E89952D2A708136F161D246 /* Pods-WhirlyGlobeSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WhirlyGlobeSwift/Info.plist;
@@ -257,6 +333,7 @@
 		};
 		AAF1056A1C9E9A13005DB098 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3118735F97C7C4ABA6F297C /* Pods-WhirlyGlobeSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WhirlyGlobeSwift/Info.plist;
@@ -285,6 +362,7 @@
 				AAF1056A1C9E9A13005DB098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
